@@ -26,7 +26,7 @@ print("Program terminated")"""
 
 #Task 5
 
-real_username = "lantern"
+"""real_username = "lantern"
 real_password = "AppleCider15"
 
 attempts = 0
@@ -43,6 +43,6 @@ while attempts < 5:
         attempts = attempts + 1
 
 if attempts == 5:
-    print("Access denied")
+    print("Access denied")"""
 
 
