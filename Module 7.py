@@ -1,5 +1,5 @@
 # Task 1
-# tuple of seasons
+
 seasons = ("Spring", "Summer", "Autumn", "Winter")
 
 
