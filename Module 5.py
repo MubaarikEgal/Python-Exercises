@@ -5,7 +5,7 @@ dice_ran = int(input("How many dice do you want to roll? "))
 total = 0
 
 for i in range(dice_ran):
-    roll = random.randint(1, 6)  # random number between 1 and 6
+    roll = random.randint(1, 6)  
     print("You've rolled:", roll)
     total = total + roll
 
