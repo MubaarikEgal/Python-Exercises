@@ -15,7 +15,7 @@ class Car:
         if self.current_speed < 0:
             self.current_speed = 0
         return
-# Task 4
+# Task 3
     def drive(self, hours):
         self.travelled_distance += self.current_speed * hours
         return
