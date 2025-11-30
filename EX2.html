@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 2 Tasks</title>
+</head>
+<body>
+
+<h1>Module 2 Outputs</h1>
+
+<script>
+/*************************
+  TASK 1
+  Prompt user for 5 numbers, print in reverse (not sorted)
+*************************/
+let numbers = [];
+
+for (let i = 0; i < 5; i++) {
+  let num = Number(prompt("Enter number " + (i + 1) + ":"));
+  numbers.push(num);
+}
+
+console.log("Numbers in reverse order:");
+for (let i = numbers.length - 1; i >= 0; i--) {
+  console.log(numbers[i]);
+}
+
+
+
+/*************************
+  TASK 2
+  Ask for number of participants,
+  then names, print alphabetically in <ol>
+*************************/
+let count = Number(prompt("How many participants?"));
+let participants = [];
+
+for (let i = 0; i < count; i++) {
+  let name = prompt("Enter participant " + (i + 1) + ":");
+  participants.push(name);
+}
+
+participants.sort();
+
+let ol = "<ol>";
+for (let name of participants) {
+  ol += "<li>" + name + "</li>";
+}
+ol += "</ol>";
+
+document.body.innerHTML += "<h2>Task 2 Participants</h2>" + ol;
+
+
+
+/*************************
+  TASK 3
+  Ask for 6 dog names, print in reverse alphabetical <ul>
+*************************/
+let dogs = [];
+
+for (let i = 0; i < 6; i++) {
+  let dog = prompt("Enter dog name " + (i + 1) + ":");
+  dogs.push(dog);
+}
+
+dogs.sort();
+dogs.reverse();
+
+let ul = "<ul>";
+for (let dog of dogs) {
+  ul += "<li>" + dog + "</li>";
+}
+ul += "</ul>";
+
+document.body.innerHTML += "<h2>Task 3 Dog Names</h2>" + ul;
+
+
+
+/*************************
+  TASK 4
+  Ask for numbers until 0 is given.
+  Print numbers from largest to smallest.
+*************************/
+let nums = [];
+let input;
+
+do {
+  input = Number(prompt("Enter a number (0 to stop):"));
+  if (input !== 0) {
+    nums.push(input);
+  }
+} while (input !== 0);
+
+nums.sort(function(a, b) {
+  return b - a;
+});
+
+console.log("Task 4 numbers (largest → smallest):");
+for (let n of nums) {
+  console.log(n);
+}
+
+
+
+/*************************
+  TASK 5
+  Ask for numbers.
+  Stop if number is repeated.
+  Print numbers sorted ascending.
+*************************/
+let entered = [];
+let repeated = false;
+
+while (!repeated) {
+  let num = Number(prompt("Enter a number:"));
+
+  if (entered.includes(num)) {
+    repeated = true;
+    alert("Number already given! Stopping.");
+  } else {
+    entered.push(num);
+  }
+}
+
+entered.sort(function(a, b) {
+  return a - b;
+});
+
+console.log("Task 5 numbers (ascending):");
+for (let n of entered) {
+  console.log(n);
+}
+
+
+
+/*************************
+  TASK 6
+  Function returns random dice (1–6).
+  Roll until result is 6. Print results in <ul>
+*************************/
+function rollDice() {
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+let rollsList = "<ul>";
+let r;
+
+do {
+  r = rollDice();
+  rollsList += "<li>" + r + "</li>";
+} while (r !== 6);
+
+rollsList += "</ul>";
+
+document.body.innerHTML += "<h2>Task 6 Dice Rolls</h2>" + rollsList;
+
+
+
+/*************************
+  TASK 7
+  Modify dice function to accept dice max value.
+  Roll until max number appears.
+*************************/
+function rollDiceSides(max) {
+  return Math.floor(Math.random() * max) + 1;
+}
+
+let maxSides = Number(prompt("Enter number of sides for the dice:"));
+let results = "<ul>";
+let result;
+
+do {
+  result = rollDiceSides(maxSides);
+  results += "<li>" + result + "</li>";
+} while (result !== maxSides);
+
+results += "</ul>";
+
+document.body.innerHTML += "<h2>Task 7 Dice (" + maxSides + " sides)</h2>" + results;
+
+/********************
+  TASK 8
+  - concat()
+*********************/
+function concat(strings) {
+  let result = '';
+  for (let i = 0; i < strings.length; i++) {
+    result = result + strings[i];
+  }
+  return result;
+}
+
+// hardcoded array
+const punkBand = ['Johnny', 'DeeDee', 'Joey', 'Marky'];
+const concatenated = concat(punkBand);
+
+document.body.innerHTML += '<p>concat result: ' + concatenated + '</p>';
+
+
+/********************
+  TASK 9
+  - even()
+*********************/
+function even(numbers) {
+  const evens = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      evens.push(numbers[i]);
+    }
+  }
+  return evens;
+}
+
+// hardcoded array
+const myNumbers = [2, 7, 4, 9, 10, 13, 8];
+const evenNumbers = even(myNumbers);
+
+console.log('Original array:', myNumbers);
+console.log('Even numbers array:', evenNumbers);
+
+</script>
+
+</body>
+</html>

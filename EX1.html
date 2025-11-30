@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript EX 1</title>
+</head>
+<body>
+
+<h1>Javacript EX1 Outputs</h1>
+
+<script>
+/***************
+  TASK 1
+  Print to console
+***************/
+console.log("I'm printing to console!");
+
+
+
+/***************
+  TASK 2
+  Ask name + greet in HTML
+***************/
+let name1 = prompt('What is your name?');
+document.body.innerHTML += '<p>Hello, ' + name1 + '!</p>';
+
+
+
+/***************
+  TASK 3
+  Three integers: sum, product, average
+***************/
+let a = Number(prompt('Enter the first integer:'));
+let b = Number(prompt('Enter the second integer:'));
+let c = Number(prompt('Enter the third integer:'));
+
+let sum = a + b + c;
+let product = a * b * c;
+let average = sum / 3;
+
+document.body.innerHTML +=
+  '<p>Sum: ' + sum + '<br>' +
+  'Product: ' + product + '<br>' +
+  'Average: ' + average + '</p>';
+
+
+
+/***************
+  TASK 4
+  Sorting hat
+***************/
+let studentName = prompt('Enter your name:');
+const number = Math.floor(Math.random() * 4) + 1;
+let house;
+
+if (number === 1) {
+  house = 'Gryffindor';
+} else if (number === 2) {
+  house = 'Slytherin';
+} else if (number === 3) {
+  house = 'Hufflepuff';
+} else {
+  house = 'Ravenclaw';
+}
+
+document.body.innerHTML += '<p>' + studentName + ', you are ' + house + '.</p>';
+
+
+
+/***************
+  TASK 5
+  Leap year check
+***************/
+let year = Number(prompt('Enter a year:'));
+let leapText;
+
+if (year % 4 === 0 && year % 100 !== 0) {
+  leapText = year + ' is a leap year.';
+} else if (year % 400 === 0) {
+  leapText = year + ' is a leap year.';
+} else {
+  leapText = year + ' is not a leap year.';
+}
+
+document.body.innerHTML += '<p>' + leapText + '</p>';
+
+
+
+/***************
+  TASK 6
+  Square root with confirm
+***************/
+let ok = confirm('Should I calculate the square root?');
+
+if (ok) {
+  let num = Number(prompt('Enter a number:'));
+
+  if (num < 0) {
+    document.body.innerHTML += '<p>The square root of a negative number is not defined.</p>';
+  } else {
+    const sqrt = Math.sqrt(num);
+    document.body.innerHTML += '<p>The square root of ' + num + ' is ' + sqrt + '.</p>';
+  }
+} else {
+  document.body.innerHTML += '<p>The square root is not calculated.</p>';
+}
+
+
+
+/***************
+  TASK 7
+  Roll N dice and sum
+***************/
+let rolls = Number(prompt('How many dice do you want to roll?'));
+let sumRolls = 0;
+
+for (let i = 0; i < rolls; i++) {
+  const roll = Math.floor(Math.random() * 6) + 1;
+  sumRolls += roll;
+}
+
+document.body.innerHTML +=
+  '<p>The sum of ' + rolls + ' dice rolls is ' + sumRolls + '.</p>';
+
+
+
+/***************
+  TASK 8
+  Leap years between two years
+***************/
+let startYear = Number(prompt('Enter the start year:'));
+let endYear = Number(prompt('Enter the end year:'));
+
+let html = '<ul>';
+
+for (let y = startYear; y <= endYear; y++) {
+  if ((y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0)) {
+    html += '<li>' + y + '</li>';
+  }
+}
+
+html += '</ul>';
+document.body.innerHTML += html;
+
+
+
+/***************
+  TASK 9
+  Prime number check
+***************/
+let n = Number(prompt('Enter an integer:'));
+let resultText;
+
+if (n <= 1) {
+  resultText = n + ' is not a prime number.';
+} else {
+  let isPrime = true;
+
+  for (let j = 2; j <= Math.sqrt(n); j++) {
+    if (n % j === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+
+  if (isPrime) {
+    resultText = n + ' is a prime number.';
+  } else {
+    resultText = n + ' is not a prime number.';
+  }
+}
+
+document.body.innerHTML += '<p>' + resultText + '</p>';
+
+</script>
+
+</body>
+</html>
