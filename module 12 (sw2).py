@@ -13,7 +13,7 @@ print(data["value"])
 
 import requests
 
-API_KEY = "b241d66b696a318fc8a121a5307bbff8" # It keeps saying city not found, I've tried multiple keys
+API_KEY = "b241d66b696a318fc8a121a5307bbff8"
 
 city = input("Enter a city: ")
 
